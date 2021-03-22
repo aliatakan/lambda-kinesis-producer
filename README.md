@@ -37,9 +37,11 @@ Create 3 terraform files in `terraform` folder
 - provider.tf : Each Terraform module must declare which providers it requires, so that Terraform can install and use them. 
 - variables.tfvars : We store necessary variables in this file. `profile = terraform` and `region = us-east-2` in this example.
 
-Run `terraform init` command to initialise a working directory containing Terraform configuration files. We are going to see "Terraform has been successfully initialized!" output.
+Run `terraform init` command to initialise a working directory containing Terraform configuration files. Go to `terraform` folder and run the init command.
 ```
 terraform init
+
+Terraform has been successfully initialized!
 ```
 
 ## Create Local Variable and Archive File
@@ -179,7 +181,7 @@ resource "aws_kinesis_stream" "data_stream" {
 
 ## Run `terraform apply` to create all resources
 
-Run `terraform apply` to create the all the resources. You can first run `terraform plan` to see which resources will be created.
+Run `terraform apply` to create the all the resources. You can first run `terraform plan` to see which resources will be created. Go to `terraform` folder and run the apply command.
 
 ```
 terraform apply -var-file="variables.tfvars" -auto-approve
@@ -187,7 +189,7 @@ terraform apply -var-file="variables.tfvars" -auto-approve
 Apply complete! Resources: 8 added, 0 changed, 0 destroyed.
 ```
 
-## Test!
+## Test!
 
 I use http://eforexcel.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/ sales records. You can download 50.000 records zip file, unzip it and then upload the zip file into the `csv-example-data-bucket` bucket. You need to remove the space characters from the name of the file. 
 
